@@ -5,17 +5,18 @@ import java.util.Date;
 
 public class Task {
 
-    private String id;
-    private String tittle;
-    private String description;
+    private String id, titulo, descripcion;
+    private boolean estado;
     private long date;
-    private boolean completed;
 
-    public Task(String id, String tittle, String description) {
+    public Task(){
+    }
+
+    public Task(String id, String titulo, String descripcion) {
         this.id = id;
-        this.tittle = tittle;
-        this.description = description;
-        this.completed = false;
+        this.titulo = titulo;
+        this.descripcion = descripcion;
+        this.estado = false;
         this.date = new Date().getTime();
     }
 
@@ -24,7 +25,6 @@ public class Task {
         Date date = new Date();
         date.setTime(this.date);
         return sdf.format(date);
-
     }
 
     public String getId() {
@@ -35,19 +35,35 @@ public class Task {
         this.id = id;
     }
 
-    public String getTittle() {
-        return tittle;
+    public String getTitulo() {
+        return titulo;
     }
 
-    public void setTittle(String tittle) {
-        this.tittle = tittle;
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
     }
 
-    public String getDescription() {
-        return description;
+    public String getDescripcion() {
+        return descripcion;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public long getDate() {
+        return date;
+    }
+
+    public void setDate(long date) {
+        this.date = date;
+    }
+
+    public boolean isEstado() {
+        return estado;
+    }
+
+    public void setEstado(boolean estado) {
+        this.estado = estado;
     }
 }
